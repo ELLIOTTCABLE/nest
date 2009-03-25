@@ -4,3 +4,4 @@
 require 'spec'
 
 ($:.unshift File.expand_path(File.join( File.dirname(__FILE__), 'helpers' ))).uniq!
+require 'enumerable_thingy'

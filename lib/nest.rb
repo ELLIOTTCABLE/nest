@@ -12,6 +12,16 @@
 # `#each_combination`, and `#each_set`.
 class Nest
   
+  ##
+  # Creates a new `Nest` from a series of objects.
+  # 
+  # *Warning:* Since `Nest`s are often created with other `Enumerable`s, you
+  # have to splat any `Enumerable` objects (such as `Array`s) when passing
+  # them to this method!
+  def initialize *args
+    
+  end
+  
   # ===============
   # = Enumerators =
   # ===============
