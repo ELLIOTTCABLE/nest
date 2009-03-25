@@ -4,37 +4,37 @@ require 'nest'
 describe Nest do
   
   describe 'initialization' do
-    it 'initializes with non-`Enumerable` objects' do
+    it 'with non-`Enumerable` objects' do
       lambda do
         Nest.new Object.new, Object.new, Object.new
       end.should_not raise_error
     end
     
-    it 'initializes with `Enumerable` objects' do
+    it 'with `Enumerable` objects' do
       lambda do
         Nest.new EnumerableThingy.new, EnumerableThingy.new, EnumerableThingy.new
       end.should_not raise_error
     end
     
-    it 'initializes with `Array`s' do
+    it 'with `Array`s' do
       lambda do
         Nest.new [:a, :b, :c], ['foo', 'bar'], [42, 42, 42]
       end.should_not raise_error
     end
     
-    it 'initializes with `Range`s' do
+    it 'with `Range`s' do
       lambda do
         Nest.new (:a..:c), ('foo'..'bar'), (1..42)
       end.should_not raise_error
     end
     
-    it 'initializes with `Hash`s' do
+    it 'with `Hash`s' do
       lambda do
         Nest.new({:a => 1, :b => 2, :c => 3}, {'foo' => /bar/}, {})
       end.should_not raise_error
     end
     
-    it 'initializes with a mix of `Enumerable`s and non-`Enumerable`s' do
+    it 'with a mix of `Enumerable`s and non-`Enumerable`s' do
       lambda do
         Nest.new Object.new, EnumerableThingy.new, ['foo', 'bar'],
           (1..42), {:a => 1, :b => 2, :c => 3}
